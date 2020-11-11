@@ -28,6 +28,7 @@ body {
 }
 
 .circle {
+  background: url('zenIcon.jpg') no-repeat center center/cover;
   background-color: #010f1c;
   height: 100%;
   width: 100%;
@@ -36,6 +37,14 @@ body {
   top: 0;
   left: 0;
   z-index: -1;
+}
+
+#text {
+  color: #010f1c;
+  position: absolute;
+  top: 240px;
+  width: fit-content;
+  
 }
 
 .gradient-circle {
@@ -111,3 +120,4 @@ body {
     transform: scale(1);
   }
 }
+

@@ -1,6 +1,7 @@
 let lat, lon = "";
 let weatherAPIKey = "8375474e12a3c07e327029469afe5cd7";
-let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
+// let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
+let youtubeAPIKey = "AIzaSyB5YPkFZ4pig1XlwG-Wipon_eK2IGNIIH8";
 
 
 function getLocation() {
@@ -26,7 +27,7 @@ function weather(){
   }).then(function(response) {
     let desc = response.current.weather[0].description;
     if(desc === "clear sky" || desc === "few clouds" || desc === "scattered clouds"){
-        youtube("happy music");
+        youtube("happy");
     } else{
         youtube("sad");
     }
@@ -47,13 +48,15 @@ function weather(){
             maxResults: 50,
             type: "video",
             videoEmbeddable: true,
+            videoLicense: "creativeCommon"
         },
     }).then(function(response) {
       console.log(response);
       let i = Math.floor(Math.random() * 50);
       console.log(i);
       $(".videoContainer").html("");
+      
       $(".videoContainer").append(`<iframe width="560" height="315"
-      src="https://www.youtube.com/embed/${response.items[i].id.videoId}?&autoplay=1"frameborder="0" 
-      allowfullscreen></iframe>`);
+      src="https://www.youtube-nocookie.com/embed/${response.items[i].id.videoId}?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
       })}
+

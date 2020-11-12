@@ -27,10 +27,20 @@ body {
   transform: scale(1);
 }
 
+strong {
+  color: teal;
+  font-size: large;
+}
+
 audio {
   border: none;
   outline: none;
-  
+}
+
+#background__music {
+  border: none;
+  padding: 16px;
+  margin: 10px;
 }
 
 .circle {
@@ -155,8 +165,3 @@ audio {
   float:right;
 }
 
-#background__music {
-  border: none;
-  padding: 16px;
-  margin: 10px;
-}

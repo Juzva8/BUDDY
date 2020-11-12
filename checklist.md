@@ -10,6 +10,10 @@
 
 * link to deep breathing
 
+* youtube search terms?
+
+* make sure localStorage is working correctly once deployed
+
 * review CSS for needed changes:
 
     * change borders?

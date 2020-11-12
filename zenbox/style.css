@@ -51,7 +51,7 @@ body {
   background: conic-gradient(
     #55b7a4 0%,
     #4ca493 40%,
-    #fff 40%,
+    rgb(44, 15, 15) 40%,
     #fff 60%,
     #336d62 60%,
     #2a5b52 100%
@@ -121,3 +121,30 @@ body {
   }
 }
 
+/* Navbar style  */
+
+.bottomMenu #left{
+  position: relative;
+  left: 10%;
+}
+
+.bottomMenu #left img{
+  float: left;
+}
+
+.bottomMenu #center{
+  margin:0 auto;
+}
+
+.bottomMenu #center img{
+  display: block;
+  margin: 0 auto;
+}
+
+.bottomMenu #right{
+  position: relative;
+  right: 10%;
+}
+.bottomMenu #right img{
+  float:right;
+}

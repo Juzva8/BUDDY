@@ -1,6 +1,6 @@
 # Needs
 
-* html landing page first time with intro
+* html landing page first time with intro (modals)
     
     * name input stored to localStorage
 
@@ -8,8 +8,18 @@
 
     * allow location input (city,state name) if they don't have location services
 
-* weather icon (grab open from weather)
+* link to deep breathing
 
-* youtube video
+* review CSS for needed changes:
 
-* deep breathing exercies (setInterval) integrate into main page
+    * change borders?
+
+    * color scheme? (currently black and white)
+    
+    * fix box sizes (scale better to desktop)
+
+    * add play button for video?
+
+    * comment out script and index
+
+    * animation for weather bug?

@@ -1,28 +1,57 @@
-if(localStorage.getItem("weather") !== null){
-  let cords = JSON.parse(localStorage.getItem("weather"));
-  let lat = cords[0];
-  let lon = cords[1];
-} else{
-  let lat, lon = "";
-}
 // behold: My Api Keys
 let weatherAPIKey = "8375474e12a3c07e327029469afe5cd7";
 // let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
 // let youtubeAPIKey = "AIzaSyB5YPkFZ4pig1XlwG-Wipon_eK2IGNIIH8";
 let youtubeAPIKey = "AIzaSyC5_FFRE6UH2JrtDt6KPpr8qKVZ_f2VSjo";
-let name = "Joe";
+
+//declaring empty global variables for use in too many functions 
+let lat, lon, name, city, width;
+
+//declaring these globally because setInterval doesnt like it when you feed functions paramareters >:|
+let forecast, timezone;
+let i = 0;
 
 //checks for browser width, if less than 780 sets youtube size to full width, otherwise tops out at 780
 if($(window).width() < 780){
-  var width = $(window).width();
+  width = $(window).width();
 }else {
-  var width = 780;
+  width = 780;
 }
-//keeps the height 16:9 to the width
-var height = width/560 * 315;
-//declaring these globally because setInterval doesnt like it when you feed functions paramareters
-let forecast, timezone;
-let i = 0;
+//keeps the youtube height 16:9 to the width
+let height = width/560 * 315;
+
+//checks if user has localStorage, if so reassigns name and lat/lon values
+if(localStorage.getItem("buddy.weather") !== null){
+  let cords = JSON.parse(localStorage.getItem("buddy.weather"));
+  name = JSON.parse(localStorage.getItem("buddy.name"));
+  lat = cords[0];
+  lon = cords[1];
+  weather();
+} else{
+  getLocation();
+  $('#starterModal').modal('show');
+}
+
+
+//checks if user entered a name and allowed location services
+function checkStatus(){
+  if($("#name").val() !== undefined){    
+    name = $("#name").val();
+  } else{
+    name = "Friend";
+  }
+  localStorage.setItem("buddy.name", JSON.stringify(name));
+  if(localStorage.getItem("buddy.weather") !== null){
+    weather();
+  }else{
+    $('#backupModal').modal('show');
+    }
+}
+//manual location entry and weather call
+function saveLoc(){
+  city = $("#city").val();
+  weatherCity();
+}
 
 //starts location services
 function getLocation() {
@@ -37,9 +66,22 @@ function getLocation() {
     // Grab coordinates from the given object
     lat = position.coords.latitude;
     lon = position.coords.longitude;
-    localStorage.setItem("weather", JSON.stringify([lat,lon]));
-    weather();  
+    localStorage.setItem("buddy.weather", JSON.stringify([lat,lon])); 
   }
+
+//weather call with City Name, to get lat and lon, also format name
+function weatherCity(){
+  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid="+ weatherAPIKey;
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+  }).then(function(response) {
+    city = response.name;
+    lat = response.coord.lat;
+    lon = response.coord.lon; 
+    localStorage.setItem("buddy.weather", JSON.stringify([lat,lon])); 
+    weather();
+})}
 
 //starts api call with scrapped lat and lon
 function weather(){
@@ -50,8 +92,10 @@ function weather(){
   }).then(function(response) {
     //defines description based on open weather's description system
     let desc = response.current.weather[0].description;
+    $(".weather").html("");
     $(".weather").append(`<img src="https://openweathermap.org/img/w/${response.current.weather[0].icon}.png" alt="weather">`)
     //checking if its a nice day (right now entirely based on the description)
+    $("#welcome").html("");
     if(desc === "clear sky" || desc === "few clouds" || desc === "scattered clouds"){      
       $("#welcome").append(`<p>Hey ${name}! I noticed the weather in your local area was
       ${desc}.</p><p>That sounds nice! Lets keep those good vibes up with nice sounds!<p>
@@ -62,11 +106,15 @@ function weather(){
       $("#welcome").append(`<p>Hey ${name}! I noticed the weather in your local area was ${desc}. </p><p>It might be unpleasant! 
       So let’s take a trip to the Bahamas where it’s nice & warm!<p>`)
       youtube("bahamas");
+    }
+    //define city if undefined
+    if(city === undefined){
+      city = lat.toFixed(1) + "," + lon.toFixed(1);
+      console.log(city);
     }    
-    //defines forecast and timezone for use in weatherWidget()
+    //defines forecast, timezone and i for use in weatherWidget()
     forecast = response.daily;
-    timezone = response.timezone;
-    
+    timezone = response.timezone;    
     i = 0;
     //start forecast bug
     weatherWidget();
@@ -84,7 +132,7 @@ function weather(){
       console.log(day, date, temp);
       //clears then inserts new forecast bug info, then increments i or resets to 0 based on forecast array
       $(".weatherWidget").html("");
-      $(".weatherWidget").append(`${day} <img src="https://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png" width="20px" heigh="20px"> ${timezone}, ${temp}°F
+      $(".weatherWidget").append(`${day} <img src="https://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png" width="20px" heigh="20px"> ${city}, ${temp}°F
         ${date}`);
       if(i < forecast.length - 1){
         i++;
@@ -118,6 +166,3 @@ function weather(){
       $(".videoContainer").append(`<iframe width="${width}" height="${height}"
       src="https://www.youtube-nocookie.com/embed/${response.items[i].id.videoId}?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
       })}
-
-//starts the whole thing with location services
-      getLocation();

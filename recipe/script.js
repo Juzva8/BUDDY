@@ -1,9 +1,7 @@
 let searchButton = document.querySelector("#search")
 
-
 searchButton.addEventListener("click", () => {
-    console.log("button pressed")
-    sendApisRequest()
+    console.log("response")
 })
 
 async function sendApisRequest() {

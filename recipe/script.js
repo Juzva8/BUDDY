@@ -18,7 +18,7 @@ async function sendApisRequest() {
 function useApiData(data) {
     for (let i = 0; i < 1; i++) {
         let calories = data.hits[i].recipe.calories.toFixed(0)
-        $("#content").append(`<div class= "card col-4 offset-1" style = "width: 18rem;">
+        $("#content").append(`<div class= "card col-4 container" style = "width: 18rem; justify-content: center;padding-top: 20px;}">
             <img src = "${data.hits[i].recipe.image}" class = "card-img-top" alt = "...">        
             <div class = "card-body">
             <h5 class = "card-title"> ${data.hits[i].recipe.label} </h5> 

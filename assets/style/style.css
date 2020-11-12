@@ -3,7 +3,48 @@
   filter: grayscale(100%);
 }
 
+.weatherWidget{
+  text-align: center;
+}
+
 .weatherWidget img{    
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+}
+
+.wrapper{
+  margin: auto;
+}
+
+.bottomMenu #left{
+  position: relative;
+  left: 10%;
+}
+
+.bottomMenu #left img{
+  float: left;
+}
+
+.bottomMenu #center{
+  margin:0 auto;
+}
+
+.bottomMenu #center img{
+  display: block;
+  margin: 0 auto;
+}
+
+.bottomMenu #right{
+  position: relative;
+  right: 10%;
+}
+.bottomMenu #right img{
+  float:right;
+}
+
+
+@media screen and (min-width: 780px) {
+  .wrapper {
+    width: 80%; 
+  }
 }

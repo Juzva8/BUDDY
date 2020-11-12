@@ -16,10 +16,10 @@
 
     * color scheme? (currently black and white)
     
-    * fix box sizes (scale better to desktop)
+    * change box sizes?
 
     * add play button for video?
 
-    * comment out script and index
+    * comment out index
 
     * animation for weather bug?

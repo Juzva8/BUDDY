@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="./assets/style/style.css">
 </head>
 <body>
-    <div class=".container-sm d-flex justify-content-center m-auto border border-dark rounded-sm">
-        <div class="row">
+    <div class="wrapper">
+    <div class=".container-sm d-flex justify-content-center m-auto">
+        <div class="row border border-dark rounded-sm">
             <div class="col my-auto calendar">
                 <img src="./assets/images/calendar3.svg" alt="calendar" width="32" height="32" title="calendar">
             </div>
@@ -23,8 +24,8 @@
     </div>
     <div class="d-flex justify-content-center">
         <div class="row mt-4 mx-2">
-            <div class="col m-auto border border-dark rounded-sm" style="text-align: center;">
-                <span id="currentWeather"></span>
+            <div class="col m-auto border border-dark rounded-sm">
+                <span id="welcome"></span>
             </div>
         </div>
     </div>
@@ -32,21 +33,22 @@
         <div class="videoContainer"></div>
     </div>
     <div class="d-flex justify-content-center mt-4">
-        <div class="col m-auto border border-dark rounded-sm weatherWidget" style="text-align: center;">
+        <div class="row m-auto border border-dark rounded-sm weatherWidget">
 
         </div>
     </div>
-    <nav class="navbar fixed-bottom navbar-light bg-light m-auto">
-        <div class="col games">
-            <img src="./assets/images/puzzle-fill.svg" alt="calendar" width="32" height="32" title="games">
+    <nav class="navbar fixed-bottom navbar-light bg-light m-auto bottomMenu">
+        <div class="col games"  id="left">
+            <img src="./assets/images/puzzle-fill.svg" alt="games" width="32" height="32" title="games">
+        </div>               
+        <div class="col meditate" id="center">
+            <img src="./assets/images/tree-fill.svg" alt="meditate" width="32" height="32" title="meditate">
         </div>
-        <div class="col meditate">
-            <img src="./assets/images/tree-fill.svg" alt="calendar" width="32" height="32" title="meditate">
-        </div>
-        <div class="col recipes">
-            <img src="./assets/images/egg.svg" alt="calendar" width="32" height="32" title="recipes">
+        <div class="col recipes" id="right">
+            <img src="./assets/images/egg.svg" alt="recipes" width="32" height="32" title="recipes">
         </div>
       </nav>
+    </div>
     
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

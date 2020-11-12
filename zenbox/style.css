@@ -27,6 +27,12 @@ body {
   transform: scale(1);
 }
 
+audio {
+  border: none;
+  outline: none;
+  
+}
+
 .circle {
   background: url('zenIcon.jpg') no-repeat center center/cover;
   background-color: #010f1c;
@@ -42,7 +48,7 @@ body {
 #text {
   color: #010f1c;
   position: absolute;
-  top: 240px;
+  top: 256px;
   width: fit-content;
   
 }
@@ -147,4 +153,10 @@ body {
 }
 .bottomMenu #right img{
   float:right;
+}
+
+#background__music {
+  border: none;
+  padding: 16px;
+  margin: 10px;
 }

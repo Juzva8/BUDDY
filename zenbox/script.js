@@ -5,6 +5,8 @@ var music = document.querySelector("#background__music")
     music.pause();
     music.currentTime = 0;  
 
+    
+
 const container = document.getElementById('container');
 const text = document.getElementById('text');
 

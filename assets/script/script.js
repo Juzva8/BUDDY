@@ -32,6 +32,10 @@ if(localStorage.getItem("buddy.weather") !== null){
   $('#starterModal').modal('show');
 }
 
+$(".settings").on("click", function(){  
+  $('#starterModal').modal('show');
+})
+
 
 //checks if user entered a name and allowed location services
 function checkStatus(){

@@ -1,11 +1,11 @@
 // behold: My Api Keys
 let weatherAPIKey = "8375474e12a3c07e327029469afe5cd7";
 // let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
-// let youtubeAPIKey = "AIzaSyB5YPkFZ4pig1XlwG-Wipon_eK2IGNIIH8";
-let youtubeAPIKey = "AIzaSyC5_FFRE6UH2JrtDt6KPpr8qKVZ_f2VSjo";
+let youtubeAPIKey = "AIzaSyB5YPkFZ4pig1XlwG-Wipon_eK2IGNIIH8";
+// let youtubeAPIKey = "AIzaSyC5_FFRE6UH2JrtDt6KPpr8qKVZ_f2VSjo";
 
 //declaring empty global variables for use in too many functions 
-let lat, lon, name, city, width;
+let lat, lon, name, city, width, j, youtubeGet;
 
 //declaring these globally because setInterval doesnt like it when you feed functions paramareters >:|
 let forecast, timezone;
@@ -163,10 +163,86 @@ function weather(){
             videoLicense: "creativeCommon"
         },
     }).then(function(response) {
+      youtubeGet = response;
       //gens a random number 0-49
-      let i = Math.floor(Math.random() * 50);
+      j = Math.floor(Math.random() * 50);
       //clears then inserts video based on the random number in relation to its order in the results
       $(".videoContainer").html("");      
-      $(".videoContainer").append(`<iframe width="${width}" height="${height}"
-      src="https://www.youtube-nocookie.com/embed/${response.items[i].id.videoId}?controls=0&autoplay=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+      $(".videoContainer").append(`<iframe id="video" width="${width}" height="${height}"
+      src="https://www.youtube-nocookie.com/embed/${youtubeGet.items[j].id.videoId}?controls=0&enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+      
+      onYouTubePlayerAPIReady();
       })}
+
+
+
+
+//the following was shamelessly stolen from https://codepen.io/AmrSubZero/pen/oLOYrA
+    
+// global variable for the player
+let player;
+
+
+// Inject YouTube API script
+let tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+let firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+// this function gets called when API is ready to use
+function onYouTubePlayerAPIReady() {
+    // create the global player from the specific iframe (#video)
+    player = new YT.Player('video', {
+        events: {
+            // call this function when player is ready to use
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady(event) {
+
+    // bind events
+    let playButton = document.getElementById("play-button");
+    playButton.addEventListener("click", function() {
+        player.playVideo();
+    });
+
+    let pauseButton = document.getElementById("pause-button");
+    pauseButton.addEventListener("click", function() {
+        player.pauseVideo();
+    });
+
+    let prevButton = document.getElementById("prev-button");
+    prevButton.addEventListener("click", function() {
+      console.log("this");
+      if(j > 0){
+        j--;
+      } else{
+        j = 49;
+      }
+        seriesOfTubes(j);
+    });
+  let nextButton = document.getElementById("next-button");
+    nextButton.addEventListener("click", function() {
+      if(j < 49){
+        j++;
+      } else{
+        j = 0;
+      }
+        seriesOfTubes(j);
+    });
+
+}
+
+function seriesOfTubes(j){
+  $(".videoContainer").html("");      
+      $(".videoContainer").append(`<iframe id="video" width="${width}" height="${height}"
+      src="https://www.youtube-nocookie.com/embed/${youtubeGet.items[j].id.videoId}?controls=0&enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
+      
+      onYouTubePlayerAPIReady();
+}
+
+
+
+

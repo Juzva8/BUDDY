@@ -1,7 +1,7 @@
 // behold: My Api Keys
 let weatherAPIKey = "8375474e12a3c07e327029469afe5cd7";
-// let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
-let youtubeAPIKey = "AIzaSyB5YPkFZ4pig1XlwG-Wipon_eK2IGNIIH8";
+let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
+// let youtubeAPIKey = "AIzaSyB5YPkFZ4pig1XlwG-Wipon_eK2IGNIIH8";
 // let youtubeAPIKey = "AIzaSyC5_FFRE6UH2JrtDt6KPpr8qKVZ_f2VSjo";
 
 //declaring empty global variables for use in too many functions 
@@ -113,11 +113,12 @@ function weather(){
     }
     //define city if undefined
     if(city === undefined){
-      city = lat.toFixed(1) + "," + lon.toFixed(1);
+      city = "lat: " + lat.toFixed(1) + ", lon:" + lon.toFixed(1);
       console.log(city);
     }    
     //defines forecast, timezone and i for use in weatherWidget()
     forecast = response.daily;
+    console.log(forecast);
     timezone = response.timezone;    
     i = 0;
     //start forecast bug
@@ -131,12 +132,12 @@ function weather(){
     {
       //date formatting for forecast bug
       let day = moment.unix(forecast[i].dt).format("dd");
-      let date = moment.unix(forecast[i].dt).format("MM/DD.YY | hA")
+      let date = moment.unix(forecast[i].dt).format("MM/DD/YY | hA")
       let temp = forecast[i].temp.max;       
       console.log(day, date, temp);
       //clears then inserts new forecast bug info, then increments i or resets to 0 based on forecast array
-      $(".weatherWidget").html("");
-      $(".weatherWidget").append(`${day} <img src="https://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png" width="20px" heigh="20px"> ${city}, ${temp}°F
+      $(".weatherWidget").html("").hide().fadeIn(1000);
+      $(".weatherWidget").append(`<span id="dayOfWeek">${day}</span> <img src="https://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png" width="24px" heigh="24px"> ${city}, ${temp}°F
         ${date}`);
       if(i < forecast.length - 1){
         i++;

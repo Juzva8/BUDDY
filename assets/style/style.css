@@ -1,34 +1,43 @@
-<<<<<<< HEAD
 body{
   font-family: 'Baloo 2', cursive;
 }
 
-.weather img {    
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
-=======
-.weather img {
-    -webkit-filter: grayscale(100%);
-    /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
->>>>>>> e5312be231893485add265876197c5ba9a2acb6e
+
+.header h2{
+    font-weight: 700;
+    padding-top: 10px;
 }
 
-#welcome {
+.weather {    
+  padding: 0;
+}
+
+.welcome {
     text-align: center;
     padding-top: 10px;
     line-height: 13px;
+    width: 100%;    
+    background-color: #87ceeb;    
+    border-radius: 5px;
 }
 
-.weatherWidget img {
-    -webkit-filter: grayscale(100%);
-    /* Safari 6.0 - 9.0 */
-    filter: grayscale(100%);
+.weatherWidget{
+    background-color: #87ceeb;
+    border-radius: 5px;
+    padding: 5px;
 }
-
 .wrapper {
     margin: auto;
     margin-top: 0.5rem;
+}
+
+.buttonControls button{    
+  border: none;
+  background-color: Transparent;
+}
+
+#dayOfWeek{    
+    font-weight: 700;
 }
 
 .bottomMenu #left {

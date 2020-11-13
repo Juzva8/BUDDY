@@ -37,6 +37,10 @@ audio {
   outline: none;
 }
 
+.audioplay-button {
+color: teal;
+}
+
 #background__music {
   border: none;
   padding: 16px;

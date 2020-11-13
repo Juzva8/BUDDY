@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
   font-family: 'Baloo 2', cursive;
 }
@@ -5,51 +6,59 @@ body{
 .weather img {    
   -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+=======
+.weather img {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+>>>>>>> e5312be231893485add265876197c5ba9a2acb6e
 }
 
-#welcome{
-  text-align: center;
-  margin-bottom: 100px;
+#welcome {
+    text-align: center;
+    margin-bottom: 100px;
 }
 
-.weatherWidget img{    
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+.weatherWidget img {
+    -webkit-filter: grayscale(100%);
+    /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
 }
 
-.wrapper{
-  margin: auto;
+.wrapper {
+    margin: auto;
+    margin-top: 0.5rem
 }
 
-.bottomMenu #left{
-  position: relative;
-  left: 10%;
+.bottomMenu #left {
+    position: relative;
+    left: 10%;
 }
 
-.bottomMenu #left img{
-  float: left;
+.bottomMenu #left img {
+    float: left;
 }
 
-.bottomMenu #center{
-  margin:0 auto;
+.bottomMenu #center {
+    margin: 0 auto;
 }
 
-.bottomMenu #center img{
-  display: block;
-  margin: 0 auto;
+.bottomMenu #center img {
+    display: block;
+    margin: 0 auto;
 }
 
-.bottomMenu #right{
-  position: relative;
-  right: 10%;
-}
-.bottomMenu #right img{
-  float:right;
+.bottomMenu #right {
+    position: relative;
+    right: 10%;
 }
 
+.bottomMenu #right img {
+    float: right;
+}
 
 @media screen and (min-width: 780px) {
-  .wrapper {
-    width: 80%; 
-  }
+    .wrapper {
+        width: 80%;
+    }
 }

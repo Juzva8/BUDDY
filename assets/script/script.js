@@ -132,7 +132,7 @@ function weather(){
     {
       //date formatting for forecast bug
       let day = moment.unix(forecast[i].dt).format("dd");
-      let date = moment.unix(forecast[i].dt).format("MM/DD/YY | hA")
+      let date = moment.unix(forecast[i].dt).format("MM/DD/YY")
       let temp = forecast[i].temp.max;       
       console.log(day, date, temp);
       //clears then inserts new forecast bug info, then increments i or resets to 0 based on forecast array

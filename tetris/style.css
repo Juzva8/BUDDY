@@ -1,9 +1,17 @@
-body {
-    text-align: center;
-    background: #fff;
-}
-#my-canvas {
-    background: #fff;
-    margin-left: 10px;
-    margin-top: 10px;
-}
+ 
+ body {
+     background-color: lavender;
+ }
+ 
+ 
+ canvas {
+            position: absolute;
+            top: 38%;
+            left: 38%;
+            width: 870px;
+            height: 1120px;
+            margin: -320px 0 0 -320px;
+        }
+
+        
+          

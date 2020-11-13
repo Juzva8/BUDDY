@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    <div class="wrapper">
+    <div class="wrapper">        
+      <!-- Modal for first time users -->
         <div class="modal" id="starterModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -27,11 +28,12 @@
                 </div>
             </div>
         </div>
+        <!-- second modal for non-location services users -->
         <div class="modal" id="backupModal" tabindex="-1">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Welcome!</h5>
+                        <h5 class="modal-title">Where are you?</h5>
                     </div>
                     <div class="modal-body">
                         <p>What is your location?</p>
@@ -44,10 +46,11 @@
                 </div>
             </div>
         </div>
+        <!-- header -->
         <div class=".container-sm d-flex justify-content-center m-auto">
             <div class="row border border-dark rounded-sm">
-                <div class="col my-auto calendar">
-                    <img src="./assets/images/calendar3.svg" alt="calendar" width="32" height="32" title="calendar">
+                <div class="col my-auto settings">
+                    <img src="./assets/images/sliders.svg" alt="settings" width="32" height="32" title="settings">
                 </div>
                 <div class="col m-auto">
                     <h2>Buddy</h2>
@@ -57,6 +60,7 @@
             </div>
 
         </div>
+        <!-- welcome message  -->
         <div class="d-flex justify-content-center">
             <div class="row m-2">
                 <div class="col m-auto border border-dark rounded-sm">
@@ -64,9 +68,11 @@
                 </div>
             </div>
         </div>
+        <!-- youtube video -->
         <div class="d-flex justify-content-center mt-4">
             <div class="videoContainer"></div>
-        </div>
+        </div>        
+    <!-- forecast -->
         <div class="d-flex justify-content-center mt-4">
             <div class="row m-auto border border-dark rounded-sm weatherWidget">
 

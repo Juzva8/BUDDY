@@ -1,6 +1,4 @@
 let searchButton = document.querySelector("#search")
-
-
 searchButton.addEventListener("click", () => {
     sendApisRequest()
 })

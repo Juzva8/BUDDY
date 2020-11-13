@@ -3,8 +3,9 @@
   filter: grayscale(100%);
 }
 
-.weatherWidget{
+#welcome{
   text-align: center;
+  margin-bottom: 100px;
 }
 
 .weatherWidget img{    

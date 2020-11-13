@@ -78,6 +78,9 @@ body{
     .wrapper {
         width: 80%;
     }
+    .searchBar{
+        width: 60%;
+    }
 }
 
 .card {

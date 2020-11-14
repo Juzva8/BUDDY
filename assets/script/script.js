@@ -7,7 +7,7 @@ let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
 //declaring empty global variables for use in too many functions 
 let lat, lon, name, city, width, j, youtubeGet;
 
-//declaring these globally because setInterval doesnt like it when you feed functions paramareters >:|
+//declaring these globally because setInterval doesnt like it when you feed functions parameters >:|
 let forecast, timezone;
 let i = 0;
 

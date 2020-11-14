@@ -4,12 +4,14 @@
  }
  
  
+     
+ 
  canvas {
             position: absolute;
             top: 38%;
-            left: 38%;
-            width: 870px;
-            height: 1120px;
+            left: 58%;
+            width: 470px;
+            height: 720px;
             margin: -320px 0 0 -320px;
         }
 

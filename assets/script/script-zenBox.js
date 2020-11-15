@@ -1,4 +1,4 @@
-$('.mediPlayer').mediaPlayer();
+// $('.mediPlayer').mediaPlayer();
 
 
 const container = document.getElementById('container');

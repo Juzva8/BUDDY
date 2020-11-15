@@ -114,11 +114,9 @@ function weather(){
     //define city if undefined
     if(city === undefined){
       city = "lat: " + lat.toFixed(1) + ", lon:" + lon.toFixed(1);
-      console.log(city);
     }    
     //defines forecast, timezone and i for use in weatherWidget()
     forecast = response.daily;
-    console.log(forecast);
     timezone = response.timezone;    
     i = 0;
     //start forecast bug
@@ -133,8 +131,7 @@ function weather(){
       //date formatting for forecast bug
       let day = moment.unix(forecast[i].dt).format("dd");
       let date = moment.unix(forecast[i].dt).format("MM/DD/YY")
-      let temp = forecast[i].temp.max;       
-      console.log(day, date, temp);
+      let temp = forecast[i].temp.max;
       //clears then inserts new forecast bug info, then increments i or resets to 0 based on forecast array
       $(".weatherWidget").html("").hide().fadeIn(1000);
       $(".weatherWidget").append(`<span id="dayOfWeek">${day}</span> <img src="https://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png" width="24px" heigh="24px"> ${city}, ${temp}°F
@@ -168,10 +165,7 @@ function weather(){
       //gens a random number 0-49
       j = Math.floor(Math.random() * 50);
       //clears then inserts video based on the random number in relation to its order in the results
-      $(".videoContainer").html("");      
-      $(".videoContainer").append(`<iframe id="video" width="${width}" height="${height}"
-      src="https://www.youtube-nocookie.com/embed/${youtubeGet.items[j].id.videoId}?controls=0&enablejsapi=1&html5=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`);
-      
+      seriesOfTubes(j);
       onYouTubePlayerAPIReady();
       })}
 
@@ -216,7 +210,6 @@ function onPlayerReady(event) {
 
     let prevButton = document.getElementById("prev-button");
     prevButton.addEventListener("click", function() {
-      console.log("this");
       if(j > 0){
         j--;
       } else{
@@ -236,6 +229,7 @@ function onPlayerReady(event) {
 
 }
 
+//function for pulling up new youtube video
 function seriesOfTubes(j){
   $(".videoContainer").html("");      
       $(".videoContainer").append(`<iframe id="video" width="${width}" height="${height}"

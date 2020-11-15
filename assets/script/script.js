@@ -135,7 +135,7 @@ function weather(){
       let temp = forecast[i].temp.max;
       //clears then inserts new forecast bug info, then increments i or resets to 0 based on forecast array
       $(".weatherWidget").html("").hide().fadeIn(1000);
-      $(".weatherWidget").append(`<span id="dayOfWeek">${day}</span> <img src="https://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png" width="24px" heigh="24px"> ${city}, ${temp}°F
+      $(".weatherWidget").append(`<span id="dayOfWeek">${day}</span> <img src="https://openweathermap.org/img/w/${forecast[i].weather[0].icon}.png" width="24px" height="24px"> ${city}, ${temp}°F
         ${date}`);
       if(i < forecast.length - 1){
         i++;

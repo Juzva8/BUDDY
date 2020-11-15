@@ -47,6 +47,10 @@ body{
     font-weight: 700;
 }
 
+#pageBreak{
+    height: 80px;
+}
+
 .bottomMenu #left {
     position: relative;
     left: 10%;

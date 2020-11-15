@@ -2,6 +2,13 @@ let searchButton = document.querySelector("#search")
 searchButton.addEventListener("click", () => {
     sendApisRequest()
 })
+$(function(){
+    $('#searchText').keypress(function(e){
+      if(e.which == 13) {
+          sendApisRequest();
+      }
+    })
+  })
 async function sendApisRequest() {
     let APP_ID = "bc65a9c5"
     let API_KEY = "152ffcca6d5b1af41df34fc359228af2"

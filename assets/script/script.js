@@ -58,6 +58,24 @@ function saveLoc(){
   weatherCity();
 }
 
+//enter key for submit in modals
+$(function(){
+  $('#name').keypress(function(e){
+    if(e.which == 13) {
+        checkStatus();        
+        $('#starterModal').modal('hide');
+    }
+  })
+})
+$(function(){
+  $('#city').keypress(function(e){
+    if(e.which == 13) {
+        saveLoc();        
+      $('#backupModal').modal('hide');
+    }
+  })
+})
+
 //starts location services
 function getLocation() {
     if (navigator.geolocation) {

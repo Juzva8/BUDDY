@@ -39,6 +39,8 @@
             color: #FF0;
             font-size: 1.5em;
         }
+
+        
     </style>
 
 <script src="src/inherit.js"></script><script src="src/sound.js"></script><script src="src/random.js"></script><script src="src/game.js"></script><script src="src/direction.js"></script><script src="src/Map.js"></script><script src="src/colors.js"></script><script src="src/mapgen.js"></script><script src="src/atlas.js"></script><script src="src/renderers.js"></script><script src="src/hud.js"></script><script src="src/galagaStars.js"></script><script src="src/Button.js"></script><script src="src/Menu.js"></script><script src="src/inGameMenu.js"></script><script src="src/sprites.js"></script><script src="src/Actor.js"></script><script src="src/Ghost.js"></script><script src="src/Player.js"></script><script src="src/actors.js"></script><script src="src/targets.js"></script><script src="src/ghostCommander.js"></script><script src="src/ghostReleaser.js"></script><script src="src/elroyTimer.js"></script><script src="src/energizer.js"></script><script src="src/fruit.js"></script><script src="src/executive.js"></script><script src="src/states.js"></script><script src="src/input.js"></script><script src="src/cutscenes.js"></script><script src="src/maps.js"></script><script src="src/vcr.js"></script><script src="src/main.js"></script>
@@ -49,17 +51,7 @@
      
      
 
-      <!-- Nav Bar-->
-     <nav class="navbar fixed-bottom navbar-light bg-light m-auto bottomMenu">
     
-    
-        <a href="../index.html"><img id="home" src="../assets/images/house-fill.svg" alt="zenbox" style="width:42px;height:42px;"></a>
-
-        <a href="../zenbox/index-zenbox.html"><img id="zen" src="../assets/images/zenIcon.png" alt="zenbox" style="width:42px;height:42px;"></a>
-    
-        <a href="../recipe/recipe.html"><img id="bowl" src="../assets/images/bowl.svg" alt="recipes" width="42" height="42" title="recipes"></a>
-        
-    </nav>
 
 
 
@@ -96,17 +88,64 @@
                 /* height: auto; */
                  /* width: auto; */
                 padding-left: 200px;
+            }
 
+                nav{
+                    height: 100px;
+                }
+                
+                .bottomMenu #left {
+                    position: relative;
+                    left: 10%;
+                }
+
+                .bottomMenu #left img {
+                    float: left;
+                }
+
+                .bottomMenu #center {
+                    margin: 0 auto;
+                }
+
+                .bottomMenu #center img {
+                    display: block;
+                    margin: 0 auto;
+                }
+
+                .bottomMenu #right {
+                    position: relative;
+                    right: 10%;
+                }
+
+                .bottomMenu #right img {
+                    float: right;
+                }
+
+                @media screen and (min-width: 780px) {
+                    nav{                        
+                        transform: scale(.5) translateY(60px);                       
+                        
+                    }
+                }
                    
                    
-                   
-               }
+               
 
                
            </style>
          
        
+      <!-- Nav Bar-->
+      <nav class="navbar fixed-bottom navbar-light bg-light m-auto bottomMenu">
     
+    
+        <a href="../index.html"><img id="home" src="../assets/images/house-fill.svg" alt="zenbox" style="width:80px;height:80px;"></a>
+
+        <a href="../zenbox/index-zenbox.html"><img id="zen" src="../assets/images/zenIcon.png" alt="zenbox" style="width:80px;height:80px;"></a>
+    
+        <a href="../recipe/recipe.html"><img id="bowl" src="../assets/images/bowl.svg" alt="recipes" width="80" height="80" title="recipes"></a>
+        
+    </nav>
 
 
 </body>

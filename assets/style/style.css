@@ -1,50 +1,92 @@
-.weather img {    
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+body{
+  font-family: 'Baloo 2', cursive;
+}
+
+
+.header h2{
+    font-weight: 700;
+    padding-top: 10px;
+}
+
+.modal button{
+    background-color: #87ceeb;
+    border: none;
+    color: black;
+}
+
+.weather {    
+  padding: 0;
+}
+
+.welcome {
+    text-align: center;
+    padding-top: 10px;
+    line-height: 13px;
+    width: 100%;    
+    background-color: #87ceeb;    
+    border-radius: 5px;
 }
 
 .weatherWidget{
-  text-align: center;
+    background-color: #87ceeb;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+}
+.wrapper {
+    margin: auto;
+    margin-top: 0.5rem;
 }
 
-.weatherWidget img{    
-  -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
-  filter: grayscale(100%);
+.buttonControls button{    
+  border: none;
+  background-color: Transparent;
 }
 
-.wrapper{
-  margin: auto;
+#dayOfWeek{    
+    font-weight: 700;
 }
 
-.bottomMenu #left{
-  position: relative;
-  left: 10%;
+#pageBreak{
+    height: 80px;
 }
 
-.bottomMenu #left img{
-  float: left;
+.bottomMenu #left {
+    position: relative;
+    left: 10%;
 }
 
-.bottomMenu #center{
-  margin:0 auto;
+.bottomMenu #left img {
+    float: left;
 }
 
-.bottomMenu #center img{
-  display: block;
-  margin: 0 auto;
+.bottomMenu #center {
+    margin: 0 auto;
 }
 
-.bottomMenu #right{
-  position: relative;
-  right: 10%;
-}
-.bottomMenu #right img{
-  float:right;
+.bottomMenu #center img {
+    display: block;
+    margin: 0 auto;
 }
 
+.bottomMenu #right {
+    position: relative;
+    right: 10%;
+}
+
+.bottomMenu #right img {
+    float: right;
+}
 
 @media screen and (min-width: 780px) {
-  .wrapper {
-    width: 80%; 
-  }
+    .wrapper {
+        width: 80%;
+    }
+    .searchBar{
+        width: 60%;
+    }
+}
+
+.card {
+    border: none !important;
 }

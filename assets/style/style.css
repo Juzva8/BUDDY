@@ -3,13 +3,14 @@ body{
   font-family: 'Baloo 2', cursive;
 }
 
-.header{    
-    background-color: #87ceeb;        
+.header{      
     border-radius: 5px;
 }
 
 
 .header h2{
+    padding-left: 20px;
+    padding-right: 20px;
     font-weight: 700;
     padding-top: 10px;
 }
@@ -29,12 +30,12 @@ body{
     padding-top: 10px;
     line-height: 13px;
     width: 100%;    
-    background-color: #87ceeb;    
+    background-color:rgba(255, 255, 255, 0.7);
     border-radius: 5px;
 }
 
 .weatherWidget{
-    background-color: #87ceeb;
+    background-color:rgba(255, 255, 255, 0.7);
     border-radius: 5px;
     padding: 5px;
     text-align: center;
@@ -46,7 +47,7 @@ body{
 
 .buttonControls{        
     border-radius: 5px;
-    background-color: #87ceeb;
+    background-color:rgba(255, 255, 255, 0.7);
 }
 .buttonControls button{    
   border: none;

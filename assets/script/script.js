@@ -2,8 +2,9 @@
 let weatherAPIKey = "8375474e12a3c07e327029469afe5cd7";
 // let youtubeAPIKey = "AIzaSyAT2zEb0Dq2h6mvWjv2FwkhThxQ6oGewG0";
 // let youtubeAPIKey = "AIzaSyB5YPkFZ4pig1XlwG-Wipon_eK2IGNIIH8";
-let youtubeAPIKey = "AIzaSyC5_FFRE6UH2JrtDt6KPpr8qKVZ_f2VSjo";
+// let youtubeAPIKey = "AIzaSyC5_FFRE6UH2JrtDt6KPpr8qKVZ_f2VSjo";
 // let youtubeAPIKey = "AIzaSyAX6zAlrvG1qIIhb0HCD7u32G5xEb2tvak";
+let youtubeAPIKey = "AIzaSyDRETb23_kh5V4IGrmyyNAS9gCbKykIy6g";
 
 //declaring empty global variables for use in too many functions 
 let lat, lon, name, city, width, j, youtubeGet;

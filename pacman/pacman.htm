@@ -37,7 +37,7 @@
         }
         #canvas-warning {
             color: #FF0;
-            font-size: 1.5em;
+            font-size: 0.5em;
         }
 
         
@@ -65,87 +65,56 @@
        
            
 
-           <img id=backfill src="background.png" alt="">
+    
 
            <style>
-
                
 
-               canvas {
-                   background: rgb(219, 216, 29);
-                   padding: 20px;
-               }
-               footer {
-                   background: black;
-               }
-
-               #home, #bowl, #zen  {
-                   background-color: white;
-               }
-               #backfill {
-
-                position: relative;
-                /* height: auto; */
-                 /* width: auto; */
-                padding-left: 200px;
-            }
-
-                nav{
+               
+                 nav{
                     height: 100px;
-                }
-                
-                .bottomMenu #left {
-                    position: relative;
-                    left: 10%;
+                    width: auto;
+                    
                 }
 
                 .bottomMenu #left img {
                     float: left;
                 }
 
-                .bottomMenu #center {
-                    margin: 0 auto;
-                }
 
                 .bottomMenu #center img {
                     display: block;
-                    margin: 0 auto;
+                    margin: 0 auto;  
+                   
                 }
 
                 .bottomMenu #right {
                     position: relative;
-                    right: 10%;
+                    right: 2%;
                 }
 
                 .bottomMenu #right img {
                     float: right;
-                }
-
-                @media screen and (min-width: 780px) {
-                    nav{                        
-                        transform: scale(.5) translateY(60px);                       
-                        
-                    }
-                }
-                   
-                   
-               
+                }     
 
                
            </style>
          
        
       <!-- Nav Bar-->
-      <nav class="navbar fixed-bottom navbar-light bg-light m-auto bottomMenu">
-    
-    
-        <a href="../index.html"><img id="home" src="../assets/images/house-fill.svg" alt="zenbox" style="width:80px;height:80px;"></a>
 
-        <a href="../zenbox/index-zenbox.html"><img id="zen" src="../assets/images/zenIcon.png" alt="zenbox" style="width:80px;height:80px;"></a>
-    
-        <a href="../recipe/recipe.html"><img id="bowl" src="../assets/images/bowl.svg" alt="recipes" width="80" height="80" title="recipes"></a>
-        
+      <nav class="navbar fixed-bottom navbar-light bg-light m-auto bottomMenu">
+        <div class="col games" id="left">
+            <a href="../zenbox/zenbox.html"><img src="../assets/images/zenIcon.png" alt="games" width="92" height="92" title="pacman"></a>
+        </div>
+        <div class="col meditate" id="center">
+            <a href="../index.html"><img src="../assets/images/house-fill.svg" alt="zenbox" style="width:72px;height:72px;"></a>
+        </div>
+        <div class="col recipes" id="right">
+            <a href="../recipe/recipe.html"><img src="../assets/images/bowl.svg" alt="recipes" width="62" height="62" title="recipes"></a>
+        </div>
     </nav>
+     
 
 
 </body>

@@ -1,54 +1,53 @@
-
-body{
-  font-family: 'Baloo 2', cursive;
+body {
+    font-family: 'Baloo 2', cursive;
 }
 
-
-.header h2{
+.header h2 {
     font-weight: 700;
     padding-top: 10px;
 }
 
-.modal button{
+.modal button {
     background-color: #87ceeb;
     border: none;
     color: black;
 }
 
-.weather {    
-  padding: 0;
+.weather {
+    padding: 0;
 }
 
 .welcome {
     text-align: center;
     padding-top: 10px;
     line-height: 13px;
-    width: 100%;    
-    background-color: #87ceeb;    
+    width: 100%;
+    background-color: #87ceeb;
     border-radius: 5px;
 }
 
-.weatherWidget{
+.weatherWidget {
     background-color: #87ceeb;
     border-radius: 5px;
     padding: 5px;
     text-align: center;
 }
+
 .wrapper {
     margin: auto;
     margin-top: 0.5rem;
 }
 
-.buttonControls button{    
-  border: none;
-  background-color: Transparent;
+.buttonControls button {
+    border: none;
+    background-color: Transparent;
 }
 
-#dayOfWeek{    
+#dayOfWeek {
     font-weight: 700;
 }
 
-#pageBreak{
+#pageBreak {
     height: 80px;
 }
 
@@ -83,7 +82,7 @@ body{
     .wrapper {
         width: 80%;
     }
-    .searchBar{
+    .searchBar {
         width: 60%;
     }
 }

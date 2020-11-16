@@ -25,6 +25,8 @@
         body {
             margin:0;
             background: rgb(0, 0, 0);
+            outline: none;
+        
             
            
         }
@@ -37,7 +39,8 @@
         }
         #canvas-warning {
             color: #FF0;
-            font-size: 1.5em;
+            font-size: 0.5em;
+            outline: none;
         }
 
         
@@ -78,60 +81,41 @@
        
            
 
-           <img id=backfill src="background.png" alt="">
+    
 
            <style>
+               
+               canvas{
+                   outline: none;
+               }
 
                
-
-               canvas {
-                   background: rgb(219, 216, 29);
-                   padding: 20px;
-               }
-               footer {
-                   background: black;
-               }
-
-               #home, #bowl, #zen  {
-                   background-color: white;
-               }
-               #backfill {
-
-                position: relative;
-                /* height: auto; */
-                 /* width: auto; */
-                padding-left: 200px;
-            }
-
-                nav{
+                 nav{
                     height: 100px;
-                }
-                
-                .bottomMenu #left {
-                    position: relative;
-                    left: 10%;
+                    width: auto;
+                    outline: none;
+                    
                 }
 
                 .bottomMenu #left img {
                     float: left;
                 }
 
-                .bottomMenu #center {
-                    margin: 0 auto;
-                }
 
                 .bottomMenu #center img {
                     display: block;
-                    margin: 0 auto;
+                    margin: 0 auto;  
+                   
                 }
 
                 .bottomMenu #right {
                     position: relative;
-                    right: 10%;
+                    right: 2%;
                 }
 
                 .bottomMenu #right img {
                     float: right;
+<<<<<<< HEAD:pacman/debug.htm
                 }
 
                 @media screen and (min-width: 780px) {
@@ -142,13 +126,32 @@
                    
                    
                
+=======
+                }     
+>>>>>>> 420994ba0408c8be269d42f42204472c94229938:pacman/pacman.htm
 
                
            </style>
          
        
       <!-- Nav Bar-->
+<<<<<<< HEAD:pacman/debug.htm
       
+=======
+
+      <nav class="navbar fixed-bottom navbar-light bg-light m-auto bottomMenu">
+        <div class="col games" id="left">
+            <a href="../zenbox/zenbox.html"><img src="../assets/images/zenIcon.png" alt="games" width="92" height="92" title="pacman"></a>
+        </div>
+        <div class="col meditate" id="center">
+            <a href="../index.html"><img src="../assets/images/house-fill.svg" alt="zenbox" style="width:72px;height:72px;"></a>
+        </div>
+        <div class="col recipes" id="right">
+            <a href="../recipe/recipe.html"><img src="../assets/images/bowl.svg" alt="recipes" width="62" height="62" title="recipes"></a>
+        </div>
+    </nav>
+     
+>>>>>>> 420994ba0408c8be269d42f42204472c94229938:pacman/pacman.htm
 
 
 </body>
